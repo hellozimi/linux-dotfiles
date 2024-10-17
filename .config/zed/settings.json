@@ -1,0 +1,46 @@
+{
+  "assistant": {
+    "default_model": {
+      "provider": "openai",
+      "model": "gpt-4o-mini"
+    },
+    "version": "2"
+  },
+  "features": {
+    "inline_completion_provider": "none"
+  },
+  "languages": {
+    "TSX": {
+      "show_inline_completions": false
+    },
+    "TypeScript": {
+      "show_inline_completions": false
+    },
+    "Go": {
+      "show_inline_completions": false
+    }
+  },
+  "theme": "Catppuccin Mocha - No Italics",
+  "base_keymap": "VSCode",
+  "vim_mode": true,
+  "ui_font_size": 19,
+  "buffer_font_size": 19,
+  "ui_font_family": "JetBrainsMonoNL Nerd Font",
+  "buffer_font_family": "JetBrainsMonoNL Nerd Font",
+  "buffer_line_height": "comfortable",
+  "vertical_scroll_margin": 5,
+  "relative_line_numbers": true,
+  "preferred_line_length": 120,
+  "seed_search_query_from_cursor": "never",
+  "double_click_in_multibuffer": "open",
+  "chat_panel": {
+    "button": false
+  },
+  "show_signature_help_after_edits": false,
+  "project_panel": {
+    "dock": "right"
+  },
+  "terminal": {
+    "dock": "bottom"
+  }
+}

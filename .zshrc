@@ -26,11 +26,7 @@ bindkey "^[[1;5D" backward-word
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Fix to ctrl+r in tmux
-bindkey '^R' history-incremental-search-backward
-# Added ctrl+p for good measure, since that was also broken
-bindkey '^P' up-history
+source <(fzf --zsh)
 
 bindkey -e
 

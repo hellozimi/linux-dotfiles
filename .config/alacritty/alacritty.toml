@@ -16,5 +16,5 @@ normal.family = "JetBrains Mono NF"
 normal.style = "Regular"
 italic.style = "Regular"
 bold.style = "Medium"
-offset.y = 10
+offset.y = 5
 size = 15

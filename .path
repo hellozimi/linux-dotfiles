@@ -1,0 +1,2 @@
+export PATH="$PATH:/home/simon/.local/bin"
+export PATH="$PATH:/home/simon/go/bin"

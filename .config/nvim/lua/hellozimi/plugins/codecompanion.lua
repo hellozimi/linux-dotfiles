@@ -24,7 +24,7 @@ return {
         openai = function()
           return require("codecompanion.adapters").extend("openai", {
             env = {
-              api_key = "cmd:cat ~/.config/.open-api",
+              api_key = "cmd:cat ~/.config/.open-ai",
             },
           })
         end,

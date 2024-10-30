@@ -13,11 +13,19 @@ source ~/.path
 HISTFILE=$HOME/.zhistory
 SAVEHIST=1000
 HISTSIZE=999
+HISTDUP=erase
 
 setopt share_history
+setopt hist_ignore_space
 setopt hist_ignore_dups
+setopt hist_ignore_all_dups
 setopt hist_expire_dups_first
+setopt hist_save_no_dups
+setopt hist_find_no_dups
 setopt hist_verify
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
@@ -28,7 +36,7 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source <(fzf --zsh)
 
-bindkey -e
+bindkey -r "^[c"
 
 autoload -Uz compinit
 source ~/powerlevel10k/powerlevel10k.zsh-theme

@@ -11,16 +11,23 @@ return {
     require("codecompanion").setup({
       strategies = {
         chat = {
-          adapter = "openai"
+          adapter = "anthropic"
         },
         inline = {
-          adapter = "openai"
+          adapter = "anthropic"
         },
         agent = {
-          adapter = "openai"
+          adapter = "anthropic"
         }
       },
       adapters = {
+        anthropic = function()
+          return require("codecompanion.adapters").extend("anthropic", {
+            env = {
+              api_key = "cmd:cat ~/.config/.anthropic",
+            },
+          })
+        end,
         openai = function()
           return require("codecompanion.adapters").extend("openai", {
             env = {

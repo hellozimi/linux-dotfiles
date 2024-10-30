@@ -51,3 +51,10 @@ tmux_send_command() {
     fi
   done
 }
+
+maestral() {
+  source /home/simon/maestral/maestral-venv/bin/activate
+  /home/simon/maestral/maestral-venv/bin/maestral "$@"
+  deactivate
+}
+

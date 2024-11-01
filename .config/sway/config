@@ -23,6 +23,11 @@ output eDP-1 {
     scale 1.5
 }
 
+output DP-3 {
+    resolution 3840x2560 position 0,0
+    scale 1.5
+}
+
 bindswitch --reload --locked lid:on exec "[ $(swaymsg -t get_outputs | jq '. | length') -gt 1 ] && swaymsg output eDP-1 disable"
 bindswitch --reload --locked lid:off output eDP-1 enable
 
@@ -152,7 +157,7 @@ input "2362:628:PIXA3854:00_093A:0274_Touchpad" {
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    #bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
@@ -168,6 +173,12 @@ input "2362:628:PIXA3854:00_093A:0274_Touchpad" {
     bindsym XF86AudioPause exec --no-startup-id dbus-send --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Pause
     bindsym XF86AudioNext exec --no-startup-id dbus-send --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
     bindsym XF86AudioPrev exec --no-startup-id dbus-send --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+
+#
+# Custom:
+#
+
+    bindsym $mod+space exec --no-startup-id /home/simon/.bin/toggle_keyboard_layout 
 
 #
 # Scratchpad:
@@ -205,25 +216,5 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
-
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
-# exec waybar
-
-#bar {
-#    position top
-#
-#    # When the status_command prints a new line to stdout, swaybar updates.
-#    # The default just shows the current date and time.
-#    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-#
-#    colors {
-#        statusline #ffffff
-#        background #323232
-#        inactive_workspace #32323200 #32323200 #5c5c5c
-#    }
-#}
 
 include /etc/sway/config.d/*

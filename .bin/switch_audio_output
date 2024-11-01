@@ -1,0 +1,23 @@
+#!/bin/bash
+
+output_sinks=$(pactl list sinks | awk '
+    /^Sink #[0-9]+$/ {sink_name=""}
+    /^\tName: / {sink_name=$2}
+    /^\tDescription: / {
+        $1="";
+        description=$0;
+        gsub(/^[ \t]+|[ \t]+$/, "", description);
+        print sink_name "|" description
+    }
+')
+
+selected_sink=$(echo "$output_sinks" | column -t -s '|' | fzf --prompt="Select audio output sink: " --with-nth 2..)
+
+if [ -n "$selected_sink" ]; then
+    sink_name=$(echo "$selected_sink" | awk '{print $1}')
+    
+    pactl set-default-sink "$sink_name"
+    echo "Default audio output set to: $selected_sink"
+else
+    echo "No output sink selected"
+fi

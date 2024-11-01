@@ -1,0 +1,12 @@
+#!/bin/bash
+
+input_sources=$(pactl list short sources | awk '{print $2}')
+
+selected_source=$(echo "$input_sources" | fzf --prompt="Select audio input source: ")
+
+if [ -n "$selected_source" ]; then
+    pactl set-default-source "$selected_source"
+    echo "Default audio input set to: $selected_source"
+else
+    echo "No input source selected"
+fi

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+LAYOUT_FILE="$HOME/.current_keyboard_layout"
+
+if [ ! -f "$LAYOUT_FILE" ]; then
+    echo "us" > "$LAYOUT_FILE"
+fi
+
+current_layout=$(cat "$LAYOUT_FILE")
+
+if [ "$current_layout" = "us" ]; then
+    swaymsg input type:keyboard xkb_layout se
+    echo "se" > "$LAYOUT_FILE"
+else
+    swaymsg input type:keyboard xkb_layout us
+    echo "us" > "$LAYOUT_FILE"
+fi

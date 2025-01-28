@@ -1,3 +1,7 @@
+export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:/home/simon/.local/bin"
 export PATH="$PATH:/home/simon/.bin"
 export PATH="$PATH:/home/simon/go/bin"
+export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:/opt/zig-linux"
+

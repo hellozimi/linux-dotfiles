@@ -1,4 +1,4 @@
-local prettier = { "prettierd", "prettier", stop_after_first = false }
+local prettier = { "prettierd", stop_after_first = false }
 return {
   "stevearc/conform.nvim",
   event = { "BufReadPre", "BufNewFile" },

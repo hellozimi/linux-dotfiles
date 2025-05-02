@@ -50,6 +50,9 @@ return {
       git = {
         ignore = false,
       },
+      notify = {
+        threshold = vim.log.levels.ERROR,
+      }
     })
 
     -- set keymaps

@@ -99,6 +99,13 @@ return {
           filetypes = { "typescriptreact", "typescript" },
         })
       end,
+      ["tailwindcss"] = function()
+        lspconfig["tailwindcss"].setup({
+          capabilities = capabilities,
+          filetypes = { "typescriptreact", "typescript" },
+        })
+      end,
+
       ["emmet_ls"] = function()
         -- configure emmet language server
         lspconfig["emmet_ls"].setup({

@@ -66,3 +66,7 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="/home/simon/.local/share/fnm:$PATH"
   eval "`fnm env`"
 fi
+
+
+# add Pulumi to the PATH
+export PATH=$PATH:/home/simon/.pulumi/bin
